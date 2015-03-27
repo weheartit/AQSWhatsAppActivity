@@ -144,7 +144,7 @@ NSString *const kAQSWhatsAppURLScheme = @"whatsapp://";
 
 - (NSURL *)nilOrFirstURLFromArray:(NSArray *)array {
     for (id item in array) {
-        if ([item isKindOfClass:[NSURL class]]) {
+        if ([item isKindOfClass:[NSURL class]] && ![item isFileURL]) {
             return item;
         }
     }
